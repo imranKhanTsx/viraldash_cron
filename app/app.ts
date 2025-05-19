@@ -1,7 +1,12 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 async function main() {
-  const CRON_URL = process.env.CRON_URL;
+  const CRON_URL =process.env.CRON_URL;
+  console.log("CRON_URL:", CRON_URL);
 
   if (!CRON_URL) {
+    console.log("CRON_URL is not set");
     throw new Error("CRON_URL is not set");
   }
 

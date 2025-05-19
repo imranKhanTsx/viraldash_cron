@@ -29,5 +29,5 @@ jobs:
       # Step 5: Run the cron job script
       - name: Run cron job
         env:
-          CORN_URL: "https://api.viraldash.io/api/campaign/campaign-cron"
+          CRON_URL: "https://api.viraldash.io/api/campaign/campaign-cron"
         run: npm run dev

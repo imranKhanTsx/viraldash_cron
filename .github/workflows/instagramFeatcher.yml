@@ -10,7 +10,6 @@ on:
 jobs:
   SendMailCronJob:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
 
     steps:
       # Step 1: Check out the repository

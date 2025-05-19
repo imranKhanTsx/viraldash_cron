@@ -1,0 +1,34 @@
+name: viraldash-cron-job
+
+on:
+  schedule:
+    - cron: '0 */2 * * *'
+
+  # Manual trigger: Adds a "Run Workflow" button in the GitHub Actions UI
+  workflow_dispatch:
+
+jobs:
+  SendMailCronJob:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      # Step 1: Check out the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22' # Use the appropriate Node.js version
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 5: Run the cron job script
+      - name: Run cron job
+        env:
+          CORN_URL: "https://api.viraldash.io/api/campaign/campaign-cron"
+        run: npm run dev

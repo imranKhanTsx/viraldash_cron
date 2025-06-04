@@ -1,8 +1,8 @@
 name: viraldash-cron-job
 
 on:
-  schedule:
-    - cron: '0 */2 * * *'
+  # schedule:
+  #   - cron: '0 */2 * * *'
 
   # Manual trigger: Adds a "Run Workflow" button in the GitHub Actions UI
   workflow_dispatch:
